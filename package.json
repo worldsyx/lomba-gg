@@ -1,0 +1,28 @@
+{
+  "name": "smartstock-pro",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,emerald\" \"npm run server\" \"npm run client\"",
+    "client": "vite",
+    "server": "node server/server.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "autoprefixer": "^10.6.1",
+    "concurrently": "^10.0.6",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "lucide-react": "latest",
+    "pg": "^8.23.1",
+    "postcss": "^8.5.29",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^3.4.19",
+    "vite": "latest"
+  }
+}

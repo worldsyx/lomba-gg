@@ -1,0 +1,78 @@
+﻿================================================================================
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+SmartStock Pro — Sistem Manajemen Inventaris & Pengadaan Pintar
+================================================================================
+Acuan Desain: Google Stitch Enterprise & Soft-UI Modern Dashboard (Berdasarkan Referensi Visual)
+
+
+1. INFORMASI UMUM & TUJUAN PRODUK
+--------------------------------------------------------------------------------
+- Nama Produk        : SmartStock Pro (Enterprise Inventory & Procurement System)
+- Standar UI/UX      : Google Stitch Design Guidelines (Enterprise Comfort) + Modern Soft-UI Layout
+- Target Pengguna    : Manajer Operasional, Pemilik Bisnis Ritel/F&B, Kepala Gudang, Supervisor Pengadaan
+- Tujuan Utama       : Menyediakan platform pemantauan stok real-time dan otomasi pengadaan barang 
+                       dengan fitur 1-Click Approval, tanpa clutter, profesional, dan dioptimalkan 
+                       untuk penggunaan durasi panjang (long-session eye comfort) menggunakan React & Tailwind CSS.
+
+
+2. PRINSIP DESAIN UTAMA & INTERAKSI (UI/UX SPECIFICATIONS)
+--------------------------------------------------------------------------------
+A. Kenyamanan Penggunaan Jangka Panjang (Long-Session Eye Comfort)
+   * Background Warna Utama : Off-white / Soft Slate Gray (#F4F5F7) yang menyerap pantulan cahaya berlebih.
+   * Kontainer Kartu        : Pure White (#FFFFFF) dengan sudut sangat melengkung (Rounded Corners 16px - 24px) 
+                              serta bayangan tipis yang sangat lembut (soft elevation shadow).
+   * Palet Warna Kontras    : Teks utama menggunakan Dark Slate/Charcoal (#1F2937) untuk kontras tinggi 
+                              tanpa ketajaman hitam pekat.
+   * Aksen Warna Utama      : Emerald Green (#10B981 / #059669) khusus untuk indikator status positif, 
+                              metrik utama, dan tombol aksi krusial.
+
+
+B. Animasi & Efek Hover Interaktif (Tailwind CSS)
+   * Transisi Halus         : Seluruh kartu dan tombol menerapkan transisi halus (transition-all duration-300 ease-in-out).
+   * Efek Lift-Up Hover     : Kartu utama sedikit naik dan mempertegas bayangan saat kursor mendekat (hover:-translate-y-1 hover:shadow-md).
+   * Tombol Interaktif      : Tombol aksi utama merespons dengan perubahan saturasi warna dan bayangan dinamis saat ditekan/di-hover.
+
+
+C. Aturan 1: Simple & Minim Tombol (Zero-Clutter Interface)
+   * Menyederhanakan aksi operasional ke dalam bentuk kartu interaktif dan contextual floating bar.
+   * Menghindari penggunaan Floating Action Button (FAB) atau tombol bertumpuk di area fokus kerja utama.
+
+
+3. ARSITEKTUR ANTARMUKA & KEBUTUHAN MODUL (MODULE REQUIREMENTS)
+--------------------------------------------------------------------------------
+3.1. Top Navigation Bar (Floating Pill Bar)
+     - Komponen : Logo Perusahaan, Navigasi Menu Pil (Dashboard, Laporan & Analisis, Dokumen PO, Riwayat Stok, Kontak Vendor), 
+                  Filter Rentang Tanggal Dinamis, Search Bar, Pusat Notifikasi, dan Profil Pengguna.
+3.2. Left Vertical Sidebar (Minimalist Icon Bar)
+     - Komponen : Ikon Navigasi Cepat dengan tooltip aktif saat di-hover.
+3.3. Command Center Dashboard (Layar Utama)
+     - Kartu Ringkasan Stok & Keuangan (Highlight Card berwarna Emerald Green & Goal Cards).
+     - Grafik Tren Penjualan & Pergerakan Barang (Bar chart interaktif bulanan/mingguan).
+     - Widget Estimasi Arus Kas, Sisa Pagu Anggaran, & Tombol "Setujui PO" / "Terima Barang".
+3.4. Modul Draf PO & 1-Click Approval
+     - Panel ringkasan otomatis penyusunan draf Purchase Order ketika barang menyentuh Reorder Point (ROP).
+     - Tombol "Setujui PO (1-Click)" untuk otorisasi instan tanpa birokrasi manual.
+3.5. Riwayat Stok, Audit, & Laporan Kinerja Vendor
+     - Tabel minim garis border (borderless clean table) dengan filter anomali otomatis (misal: lonjakan promo).
+
+
+4. DAFTAR KOMPONEN YANG HARUS DIBUAT (DEVELOPMENT CHECKLIST)
+--------------------------------------------------------------------------------
+[ ] Setup Proyek React (Vite) + Tailwind CSS & Konfigurasi Warna Kustom.
+[ ] Pembuatan Layout Utama (Floating Pill Navbar + Left Sidebar).
+[ ] Implementasi Efek Hover & Transisi Halus pada Kartu serta Tombol.
+[ ] Modul Dashboard Utama (`/dashboard`).
+[ ] Modul Dokumen PO & 1-Click Approval (`/dokumen-po`).
+[ ] Modul Laporan & Analisis Keuangan (`/laporan`).
+[ ] Modul Riwayat Stok & Audit Keselamatan (`/riwayat-audit`).
+[ ] Modul Kontak & Performa Vendor (`/kontak-vendor`).
+
+
+5. RENCANA KERJA & PROSES VALIDASI (DEVELOPER WORKFLOW)
+--------------------------------------------------------------------------------
+1. Perencanaan Struktur Komponen Modular (Pemisahan Navbar, Sidebar, Kartu, dan Tabel).
+2. Implementasi Styling Tailwind CSS (Fokus pada Soft-UI & Eye Comfort).
+3. Integrasi Animasi & Hover State Interaktif.
+4. Pemeriksaan Mandiri (Self-Code Review: Validasi waktu muat < 1.2s, responsivitas, dan fungsionalitas tombol).
+5. Penyerahan Hasil Kerja ke Klien.
+================================================================================
